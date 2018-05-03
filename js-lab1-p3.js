@@ -23,8 +23,10 @@ class AddressBook {
 
   }
 
-  print(){
-    console.log(this.contacts);
+  print() {
+    for (let i = 0; i < this.contacts.length; i++) {
+      console.log(this.contacts[i]);
+    }
   }
 } /*end of addressBook class*/
 
@@ -43,32 +45,32 @@ let addressBook = new AddressBook();
 
 /*while loop containing prompts*/
 
-while (true) {
- let p = prompt("Would you like to add (a), delete (d), print (p), or quit (q)?");
- if (p === "add" || p === "a") {
-   const info = {
-     name: prompt("What is their name?"),
-     email: prompt("What is their email?"),
-     phone: prompt("What is their phone number?"),
-     relation: prompt("What is their relation to you?")
-   };
+    while (true) {
+     let p = prompt("Would you like to add (a), delete (d), print (p), or quit (q)?");
+     if (p === "add" || p === "a") {
+       const info = {
+         name: prompt("What is their name?"),
+         email: prompt("What is their email?"),
+         phone: prompt("What is their phone number?"),
+         relation: prompt("What is their relation to you?")
+       };
 
-  addressBook.add(info);
+      addressBook.add(info);
 
-} else if (p === "delete" || p === "d") {
-  let delp = prompt("Which would you like to delete?");
-  addressBook.deleteAt(delp);
+    } else if (p === "delete" || p === "d") {
+      let delp = prompt("Which would you like to delete?");
+      addressBook.deleteAt(delp);
 
-} else if (p === "print" || p === "p") {
-  addressBook.print();
-} else if (p === "quit" || p === "q") {
-  console.log("You selected quit.");
-  break;
-} else {
-  console.log("Please choose an option");
-}
+    } else if (p === "print" || p === "p") {
+      addressBook.print();
+    } else if (p === "quit" || p === "q") {
+      console.log("You selected quit.");
+      break;
+    } else {
+      alert("Please choose an option");
+    }
 
-} /*end of while loop*/
+  } /*end of while loop*/
 
 
 } /*End of code block*/
